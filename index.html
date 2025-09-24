@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Budget Tracker</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/583/583985.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/styles.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    
+   
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- jsPDF -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+    <!-- PapaParse -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="logo">💸</span>
+          <span class="name">Budget</span>
+        </div>
+
+         <!-- Close Button -->
+        <button id="sidebar-close-btn" class="sidebar-close-btn">X</button>
+
+
+        <nav class="nav">
+          <button class="nav-item active" data-route="dashboard"><i class="ph ph-gauge"></i><span>Dashboard</span></button>
+          <button class="nav-item" data-route="transactions"><i class="ph ph-receipt"></i><span>Transactions</span></button>
+          <button class="nav-item" data-route="budgets"><i class="ph ph-wallet"></i><span>Budgets</span></button>
+          <button class="nav-item" data-route="bills"><i class="ph ph-calendar-check"></i><span>Bills</span></button>
+          <button class="nav-item" data-route="goals"><i class="ph ph-target"></i><span>Goals</span></button>
+          <button class="nav-item" data-route="reports"><i class="ph ph-chart-line"></i><span>Reports</span></button>
+        </nav>
+        <div class="sidebar-footer">
+          <button id="export-btn" class="secondary"><i class="ph ph-share-network"></i><span>Export</span></button>
+          <div class="theme">
+            <label class="switch">
+              <input type="checkbox" id="theme-toggle">
+              <span class="slider"></span>
+            </label>
+            <span class="theme-label">Dark mode</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="left">
+            <button id="menu-toggle" class="icon-btn"><i class="ph ph-list"></i></button>
+            <h1 id="page-title">Dashboard</h1>
+          </div>
+          <div class="right">
+            <select id="currency-select" class="select"></select>
+            <button id="quick-add" class="primary"><i class="ph ph-plus"></i><span>Add Expense</span></button>
+          </div>
+        </header>
+
+        <section id="content" class="content"></section>
+      </main>
+    </div>
+
+    <div id="modal-root" class="modal-backdrop">
+      <div class="modal">
+        <header>
+          <strong id="modal-title">Details</strong>
+          <button id="modal-close" class="close">Close</button>
+        </header>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+  </html>
+
+
