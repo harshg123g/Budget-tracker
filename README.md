@@ -23,8 +23,6 @@ A responsive, modern budget tracking web app with guest access. Track expenses, 
 - Chart.js for charts (CDN)
 - jsPDF (CDN) for PDF
 - PapaParse (CDN) for CSV
-
-## Extend
 - Replace static currency rates in `src/lib/currency.js` with live rates API.
 - Add notifications for bills via Service Workers or email service (requires backend).
 - Add authentication and cloud sync by introducing an API backend.
